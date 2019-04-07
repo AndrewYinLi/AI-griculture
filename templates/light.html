@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="../static/css/switch.css">
-  <link rel="stylesheet" href="../static/css/subpages.css">
+  <link rel="stylesheet" href="../static/css/style.css">
   <link rel="shortcut icon" href="../static/resources/favicon.png">
   <script src="../static/script/script.js" defer></script>
   <title>Light - Hypoponics Dashboard</title>
@@ -34,20 +34,34 @@
       </nav>
     </header>
 
-    <!-- Main Section -->
     <main>
-      <h1>Light</h1>
 
-      <!-- UV sensors -->
-      <p>UV Sensors: [TODO]</p>
+      <!-- Left Side (Text) -->
+      <div id="left">
+        <div id="note">
+          <img src="../static/resources/icon-back.png" alt="Back Button">
+          <h2>Hydroponics Dashboard</h2>
+        </div>
 
-      <div class="button">
-        <p>Light Button: </p>
-        <!-- Button: On/off water -->
-        <label class="switch">
-          <input class="switch-button" type="checkbox" name="main power" onClick="" />
-          <span class="slider round">
-        </label>
+        <h1>Light</h1>
+
+        <!-- UV sensors -->
+        <p>UV Sensors: [TODO]</p>
+
+        <div class="button">
+          <p>Light Button: </p>
+          <!-- Button: On/off water -->
+          <label class="switch">
+            <input class="switch-button" type="checkbox" name="main power" onClick="" />
+            <span class="slider round">
+          </label>
+        </div>
+
+      </div>
+
+      <!-- Right Side (Image) -->
+      <div id="right">
+        <img src="../static/resources/light.jpg" alt="Plant Species">
       </div>
     </main>
 

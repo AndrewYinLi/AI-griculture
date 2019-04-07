@@ -132,6 +132,7 @@ main {
   position: absolute;
     right: -16%;
     top: -16%;
+  object-fit: cover;
   /* height: 600px; */
   /* width: 600px; */
   height: 30vw;
@@ -172,4 +173,40 @@ main {
   padding: 20px;
   box-shadow: 0 0 0px 3px rgba(0, 131, 0, 0.19), 0 0px 20px rgba(0, 177, 15, 0.23);
   /* box-shadow: #939393; */
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  margin-bottom: 15px;
+  padding: 5px 2px;
+}
+
+/* Custom Code */
+.button {
+  display: flex;
+    align-items: center;
 }

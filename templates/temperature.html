@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="../static/css/switch.css">
-  <link rel="stylesheet" href="../static/css/subpages.css">
+  <link rel="stylesheet" href="../static/css/style.css">
   <link rel="shortcut icon" href="../static/resources/favicon.png">
   <script src="../static/script/script.js" defer></script>
   <title>Temperature - Hypoponics Dashboard</title>
@@ -34,24 +34,36 @@
       </nav>
     </header>
 
-    <!-- Main Section -->
     <main>
-      <h1>Temperature</h1>
-      <!-- Weather API -->
-      <p>Weather: [TODO]</p>
 
-      <!-- Recommended water usage -->
-      <p>Recommended: [TODO]</p>
+      <!-- Left Side (Text) -->
+      <div id="left">
+        <div id="note">
+          <img src="../static/resources/icon-back.png" alt="Back Button">
+          <h2>Hydroponics Dashboard</h2>
+        </div>
+        <h1>Temperature</h1>
+        <!-- Weather API -->
+        <p>Weather: [TODO]</p>
 
-      <div class="button">
-        <p>Water Button: </p>
-        <!-- Button: On/off water -->
-        <label class="switch">
-          <input class="switch-button" type="checkbox" name="main power" onClick="" />
-          <span class="slider round">
-        </label>
+        <!-- Recommended water usage -->
+        <p>Recommended: [TODO]</p>
+
+        <div class="button">
+          <p>Water Button: </p>
+          <!-- Button: On/off water -->
+          <label class="switch">
+            <input class="switch-button" type="checkbox" name="main power" onClick="" />
+            <span class="slider round">
+          </label>
+        </div>
+
       </div>
 
+      <!-- Right Side (Image) -->
+      <div id="right">
+        <img src="../static/resources/temp.jpg" alt="Plant Species">
+      </div>
     </main>
 
   </div>
