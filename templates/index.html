@@ -45,26 +45,23 @@
 
         <!-- Data goes here -->
         <div id="data">
-          <a class="box tooltip" href="temperature.html">
+          <a class="box" href="{{ url_for('temperature') }}">
             <p>Temp</p>
-            <p>32°C</p>
-            <span class="tooltiptext">Displays information about the temperature</span>
+            <p>{{ temperature }}°C</p>
           </a>
-          <a class="box tooltip" href="water.html">
+          <a class="box" href="{{ url_for('water1') }}">
             <p>Water</p>
-            <p>29%</p>
-            <span class="tooltiptext">Displays information and graphs about the water</span>
+            <p>{{ water }}%</p>
           </a>
-          <a class="box tooltip" href="light.html">
+          <a class="box" href="{{ url_for('light') }}">
             <p>Light</p>
-            <p>62%</p>
-            <span class="tooltiptext">Displays information about the light</span>
+            <p>{{ light }}%</p>
           </a>
-          <!-- <a class="box tooltip" href="info.html">
-            <p>Timeline</p>
-            <p>84%</p>
-            <span class="tooltiptext">Displays information about the timeline</span>
-          </a> -->
+          <a class="box" href="{{ url_for('info') }}">
+            <p>Statistics</p>
+            <!-- <p>84%</p> -->
+            <!-- <span class="tooltiptext">Displays information about the timeline</span> -->
+          </a>
         </div>
 
       </div>

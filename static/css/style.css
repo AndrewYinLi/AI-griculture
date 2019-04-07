@@ -24,7 +24,7 @@ body {
   height: calc(100vh - 200px);
   overflow: hidden;
   display: relative;
-  border-bottom: 50px solid #e6eaec;
+  /*border-bottom: 50px solid #e6eaec;*/
 }
 
 header {
@@ -135,8 +135,8 @@ main {
   object-fit: cover;
   /* height: 600px; */
   /* width: 600px; */
-  height: 30vw;
-  width: 30vw;
+  height: 28vw;
+  width: 28vw;
   border: 2px solid #9dbd534b;
 }
 
