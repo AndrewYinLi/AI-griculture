@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="shortcut icon" href="../static/resources/favicon.png">
+  <script src="../static/script/script.js" defer></script>
+  <title>Hypoponics Dashboard</title>
+</head>
+
+<body>
+
+  <div id="content">
+    <!-- Header Section -->
+    <header>
+      <nav>
+        <div id="navbar-left">
+          <a href="#"><img src="../static/resources/icon-home.png" alt="Home Menu"></a>
+          <img src="../static/resources/icon-bell.png" alt="Bell Menu">
+          <img src="../static/resources/icon-refresh.png" alt="Refresh Menu">
+          <img src="../static/resources/icon-share.png" alt="Share Menu">
+          <img src="../static/resources/icon-gear.png" alt="Gear Menu">
+        </div>
+        <div id="navbar-right">
+          <img src="../static/resources/icon-sun.png" alt="Sun Menu">
+          <p id="time" onload="showTime()"></p>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+
+      <!-- Left Side (Text) -->
+      <div id="left">
+        <div id="note">
+          <img src="../static/resources/icon-back.png" alt="Back Button">
+          <h2>Hydroponics Dashboard</h2>
+        </div>
+        <h1>Myriophyllum Spicatum</h1>
+
+        <!-- Data goes here -->
+        <div id="data">
+          <a class="box" href="temperature.html">
+            <p>Temp</p>
+            <p>32°C</p>
+          </a>
+          <a class="box" href="water.html">
+            <p>Water</p>
+            <p>29%</p>
+          </a>
+          <a class="box" href="light.html">
+            <p>Light</p>
+            <p>62%</p>
+          </a>
+          <a class="box" href="info.html">
+            <p>Timeline</p>
+            <p>84%</p>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right Side (Image) -->
+      <div id="right">
+        <img src="../static/resources/plant.jpg" alt="Plant Species">
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
