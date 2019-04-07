@@ -5,17 +5,32 @@ from flask import Flask, render_template, request, redirect, url_for
 import urllib.request
 import numpy as np
 import matplotlib.pyplot as plt
+import threading
 
-random_forest = new RandomForestClassifier(n_estimators = 200, n_jobs = -1);
-mem = genfromtxt('sensor_baseline.csv', delimiter=',')
+random_forest = RandomForestClassifier(n_estimators = 200, n_jobs = -1);
+mem = np.genfromtxt('sensor_baseline.csv', delimiter=',')
+cache = np.array([])
+
+def update(cache):
+	threading.Timer(2.0, update, [cache]).start()
+	if cache.shape[0] > 0:
+		aggregate = np.append(mem, cache, axis=0)
+		random_forest.fit(aggregate[:, 1:], aggregate[:, 0].reshape(-1,1).ravel())
+	else:
+		random_forest.fit(mem[:, 1:], mem[:, 0].reshape(-1,1).ravel())
+	sensor_data = urllib.request.urlopen("http://172.31.32.74:3000/").read().decode('utf-8').split(",")
+	prediction = random_forest.predict([sensor_data]);
+	if cache.shape[0] > 1000:
+		cache = np.delete(cache, 0, 0)
+	cache = np.append(cache, np.append(prediction, sensor_data, axis=0), axis=0)
+	print(prediction)
 
 app = Flask(__name__)
+update(cache)
+
+
+
 
 @app.route('/')
 def index():
-	sensor_data = urllib.request.urlopen("HTTP_HERE").read().split(",")
-	random_forest.fit(np.array(mem));
-	prediction = random_forest.predict(sensor_data);
-	mem = np.delete(mem, 0, 0)
-	mem = np.append(mem, [prediction + sensor_data], axis=0)
 	return render_template('index.html')
