@@ -45,7 +45,7 @@ def update(cache):
 	threading.Timer(2.0, update, [cache]).start()
 
 app = Flask(__name__)
-#update(cache)
+update(cache)
 
 @app.route('/')
 def index():
