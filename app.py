@@ -25,14 +25,26 @@ for i in range(0, len(mem)):
 	if line[2] > waterMax:
 		waterMax = line[2]
 
-moistureShortPath = "moistureshort.png"
-moistureLongPath = "moisturelong.png"
+moistureShortPath = "static/resources/moistureshort.png"
+moistureLongPath = "static/resources/moisturelong.png"
 memGlobal = None
 cacheGlobal = None
 waterGlobal = 0
 lightGlobal = 0
 owm = pyowm.OWM("14963a49f9571f300dd0d464fa4e5c2e")
 
+
+def getTemperature():
+	observation = owm.weather_at_place("San Francisco, US")
+	w = observation.get_weather()
+	return int(w.get_temperature("celsius")["temp"])
+
+def getWater():
+	print(int(waterGlobal * 100 / waterMax))
+	return int(waterGlobal * 100 / waterMax)
+
+def getLight():
+	return int(lightGlobal * 100 / lightMax)
 
 def predict_json(project, model, instances, version=None):
 	"""Send json data to a deployed model for prediction.
@@ -96,16 +108,27 @@ def update(cache):
 	threading.Timer(2.0, update, [cache]).start()
 
 app = Flask(__name__)
-#update(cache)
+update(cache)
 
 @app.route('/')
 def index():
-	observation = owm.weather_at_place("San Francisco, US")
-	w = observation.get_weather()
-	return render_template("index.html", temperature = int(w.get_temperature("celsius")["temp"]), water=int(waterGlobal * 100 / waterMax), light=int(lightGlobal * 100 / lightMax))
+	
+	return render_template("index.html", temperature = getTemperature(), water = getWater(), light = getLight())
 
 @app.route('/water')
 def water():
+	return render_template("water.html", water = getWater())
+
+@app.route('/light')
+def light():
+	return render_template("light.html", light = getLight())
+
+@app.route('/temperature')
+def temperature():
+	return render_template("temperature.html", temperature = getTemperature())
+
+@app.route('/info')
+def info():
 	memNp = np.array(memGlobal)
 	cacheNp = np.array(cacheGlobal)
 	plt.title("Short-term Moisture")
@@ -127,22 +150,6 @@ def water():
 		os.remove(moistureLongPath)
 	plt.savefig(moistureLongPath)
 	plt.clf()
-	return render_template("water.html")
-
-@app.route('/light')
-def light():
-	return render_template("light.html")
-
-@app.route('/temperature')
-def temperature():
-	return render_template("temperature.html")
-
-@app.route('/water1')
-def water1():
-	return render_template("water.html")
-
-@app.route('/info')
-def info():
 	return render_template("info.html")
 
 if __name__ == '__main__':

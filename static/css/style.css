@@ -216,3 +216,25 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+#thing {
+  display: flex;
+    flex-direction: row;
+}
+
+#graph1, #graph2 {
+  height: 140px !important;
+  width: 200px !important;
+}
+
+#graph1 {
+  margin-right: 50px;
+}
+
+#graph1:hover, #graph2:hover {
+  height: 60vh !important;
+  width: 40vw !important;
+  z-index: 1100 !important;
+  position: absolute;
+  top: 20%;
+}
