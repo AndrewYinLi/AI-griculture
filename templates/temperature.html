@@ -43,21 +43,27 @@
           <h2>Hydroponics Dashboard</h2>
         </div>
         <h1>Temperature</h1>
-        <!-- Weather API -->
-        <p>Weather: [TODO]</p>
 
-        <!-- Recommended water usage -->
-        <p>Recommended: [TODO]</p>
+        <div id="data">
+          <!-- Weather API -->
+          <a class="box tooltip">
+            <p>Weather:</p>
+            <p>23°C</p>
+            <span class="tooltiptext">Weather Data</span>
+          </a>
 
-        <div class="button">
-          <p>Water Button: </p>
-          <!-- Button: On/off water -->
-          <label class="switch">
-            <input class="switch-button" type="checkbox" name="main power" onClick="" />
-            <span class="slider round">
-          </label>
+          <!-- Recommended water usage -->
+          <a class="box tooltip center">
+            <p>Water ON/OFF:</p>
+            <label class="switch">
+              <input class="switch-button" type="checkbox" name="main power" onClick="" />
+              <span class="slider round">
+            </label>
+            <span class=" tooltiptext">Our Recommendation</span>
+          </a>
         </div>
 
+        <p>Recommended: Your plant needs water!</p>
       </div>
 
       <!-- Right Side (Image) -->

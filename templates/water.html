@@ -46,34 +46,43 @@
 
         <h1>Water</h1>
 
-        <!-- Weather API -->
-        <p>Weather: [TODO]</p>
+        <div id="data">
+          <!-- Weather API -->
+          <a class="box tooltip">
+            <p>Weather:</p>
+            <p>23°C</p>
+            <span class="tooltiptext">Weather Data</span>
+          </a>
 
-        <!-- Recommended water usage -->
-        <p>Recommended: [TODO]</p>
+          <!-- Humidity -->
+          <a class="box tooltip">
+            <p>Humidity:</p>
+            <p>54%</p>
+            <span class="tooltiptext">Humidity Data</span>
+          </a>
 
-        <!-- Humidity -->
-        <p>Humidity: [TODO]</p>
-
-        <!-- Prediction -->
-        <p>Prediction: [TODO]</p>
-
-        <div class="button">
-          <p>Water Button: </p>
-          <!-- Button: On/off water -->
-          <label class="switch">
-            <input class="switch-button" type="checkbox" name="main power" onClick="" />
-            <span class="slider round">
-          </label>
+          <!-- Recommended water usage -->
+          <a class="box tooltip center">
+            <p>Water ON/OFF:</p>
+            <label class="switch">
+              <input class="switch-button" type="checkbox" name="main power" onClick="" />
+              <span class="slider round">
+            </label>
+            <span class=" tooltiptext">Our Recommendation</span>
+          </a>
         </div>
 
+        <!-- <p>Recommended: Your plant needs water!</p> -->
+        <p>Prediction: The plant will need water in 23 hours.</p>
       </div>
 
-      <!-- Right Side (Image) -->
-      <div id="right">
-        <img src="../static/resources/water.jpg" alt="Plant Species">
-      </div>
-    </main>
+  </div>
+
+  <!-- Right Side (Image) -->
+  <div id="right">
+    <img src="../static/resources/water.jpg" alt="Plant Species">
+  </div>
+  </main>
 
   </div>
 </body>
