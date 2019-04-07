@@ -57,12 +57,17 @@
 
           <!-- Recommended water usage -->
           <a class="box tooltip center">
-            <p>Water ON/OFF:</p>
-            <label class="switch">
-              <input class="switch-button" type="checkbox" name="main power" onClick="" />
-              <span class="slider round">
-            </label>
-            <span class=" tooltiptext">Our Recommendation</span>
+            <form action="http://172.31.32.74:3000/" method="post">
+              <input type="hidden" name="pump" value="0" />
+              <button type="submit" class="btn red">Water OFF</button>
+            </form>
+          </a>
+
+          <a class="box tooltip center">
+            <form action="http://172.31.32.74:3000/" method="post">
+              <input type="hidden" name="pump" value="1" />
+              <button type="submit" class="btn">Water ON</button>
+            </form>
           </a>
         </div>
 

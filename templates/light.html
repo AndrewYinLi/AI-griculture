@@ -54,12 +54,17 @@
 
           <!-- Recommended water usage -->
           <a class="box tooltip center">
-            <p>Light ON/OFF:</p>
-            <label class="switch">
-              <input class="switch-button" type="checkbox" name="light" onClick="" />
-              <span class="slider round">
-            </label>
-            <span class=" tooltiptext">Light Button: To toggle the light</span>
+            <form action="http://172.31.32.74:3000/" method="post">
+              <input type="hidden" name="light" value="0" />
+              <button type="submit" class="btn red">Light OFF</button>
+            </form>
+          </a>
+
+          <a class="box tooltip center">
+            <form action="http://172.31.32.74:3000/" method="post">
+              <input type="hidden" name="light" value="1" />
+              <button type="submit" class="btn">Light ON</button>
+            </form>
           </a>
         </div>
       </div>
