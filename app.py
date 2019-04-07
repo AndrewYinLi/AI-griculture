@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import threading
 import requests
 import datetime
+from tqdm import tqdm
 
 microcontrollerIP = "http://172.31.32.74:3000/"
 
@@ -44,7 +45,7 @@ def update(cache):
 	threading.Timer(2.0, update, [cache]).start()
 
 app = Flask(__name__)
-update(cache)
+#update(cache)
 
 @app.route('/')
 def index():
@@ -70,3 +71,6 @@ def index():
 	plt.savefig(moistureLongPath)
 	plt.clf()
 	return render_template('index.html')
+
+if __name__ == '__main__':
+	app.run(host="127.0.0.1", port=5000)
